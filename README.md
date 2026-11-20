@@ -22,11 +22,7 @@ A Streamlit-based graphical front-end in Python that demonstrates how to wrap co
 ## 🚀 Setup
 
 ```bash
-
-Install Streamlit:
-
+https://github.com/namandhyani08/REVERSEX-Cybersecurity-Automation-Tool-GUI.git
+cd revx.py
 pip install streamlit --break-system-packages
-
-Launch the web interface:
-
-streamlit run app.py
+streamlit run revx.py
