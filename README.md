@@ -1,27 +1,32 @@
 # REVERSEX-Cybersecurity-Automation-Tool-GUI
 Streamlit GUI demonstrating dynamic payload-string generation, sidebar config, and subprocess integration — for authorized security testing/lab use only.
 
-🛡️ REVERSEX — Interactive GUI Wrapper for CLI Security Tools
+# 🛡️ REVERSEX
 
-A Streamlit-based graphical front-end that demonstrates how to wrap command-line security tooling (like msfvenom and standard networking one-liners) in an interactive, configurable dashboard.
+A Streamlit-based graphical front-end in Python that demonstrates how to wrap command-line security utilities (such as `msfvenom` and standard connection strings) in an interactive, configurable dashboard.
 
-🧩 What This Project Demonstrates
-🔄 Dynamic form-driven code generation — user inputs (host/port) feed into template strings that update live as selections change
-🎛️ Sidebar-based configuration pattern — persistent settings panel separate from the main content area, a common pattern for “studio” or “generator” style tools
-📊 Metric dashboards — st.metric used to surface current config state at a glance
-⚙️ Subprocess integration — shelling out to external binaries (msfvenom) from a Python web app, capturing stdout/stderr, and surfacing results/errors back to the UI
-🧭 Conditional multi-engine UI — a single selectbox branching into entirely different generator “engines” with their own input schemas
-🛠️ Tech Stack
-🐍 Python 3
-🎨 Streamlit (UI framework)
-🌑 Custom CSS injection for dark/cyberpunk theming
+## 🧩 What This Project Demonstrates
 
-🚀 Setup
-bash
+* **Dynamic Form-Driven Generation:** Sidebar `LHOST` and `LPORT` inputs feed into payload templates and `msfvenom` commands.
+* **Sidebar Configuration Pattern:** Keeps connection settings persistent in a sidebar while keeping the main workspace focused on generation.
+* **Metric Dashboards:** Uses `st.metric` cards to surface active configuration values and framework status at a glance.
+* **Subprocess Integration:** Executes `msfvenom` via `subprocess.run`, captures `stdout`/`stderr`, and generates a companion `handler.rc` file.
+* **Conditional Multi-Engine UI:** Branches from a single selector into either standard connection strings or `msfvenom` platform/format options.
+
+## 🛠️ Tech Stack
+
+* **Python 3**
+* **Streamlit**
+* **Custom CSS** (dark/cyberpunk styling and compact spacing)
+
+## 🚀 Setup
+
+```bash
+
+Install Streamlit:
+
 pip install streamlit --break-system-packages
 
+Launch the web interface:
+
 streamlit run app.py
-
-⚠️ Important
-
-This code shells out to msfvenom and generates reverse shell connection strings. Anyone using or adapting this must only do so in contexts they’re authorized to test (their own lab, systems they own, or engagements with explicit written permission). Repos that publish working exploit/payload generators without this framing are frequently taken down or flagged by GitHub and hosting providers — so if you publish this, lead with your authorization scope clearly, and consider whether the actual generator logic belongs in a private/educational-only repo versus the public one showcasing the UI pattern.
