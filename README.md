@@ -19,7 +19,9 @@ A Streamlit-based graphical front-end that demonstrates how to wrap command-line
 🚀 Setup
 bash
 pip install streamlit --break-system-packages
+
 streamlit run app.py
+
 ⚠️ Important
 
 This code shells out to msfvenom and generates reverse shell connection strings. Anyone using or adapting this must only do so in contexts they’re authorized to test (their own lab, systems they own, or engagements with explicit written permission). Repos that publish working exploit/payload generators without this framing are frequently taken down or flagged by GitHub and hosting providers — so if you publish this, lead with your authorization scope clearly, and consider whether the actual generator logic belongs in a private/educational-only repo versus the public one showcasing the UI pattern.
